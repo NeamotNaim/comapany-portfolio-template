@@ -1,0 +1,1462 @@
+/* Admin Dashboard Styles */
+
+/* Reset any inherited styles from main website */
+.admin-layout * {
+  box-sizing: border-box;
+}
+
+.admin-layout {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  line-height: 1.5;
+  color: #374151;
+  background-color: #f9fafb;
+}
+
+/* Professional color scheme */
+:root {
+  --admin-primary: #4f46e5;
+  --admin-primary-dark: #3730a3;
+  --admin-secondary: #6366f1;
+  --admin-success: #10b981;
+  --admin-warning: #f59e0b;
+  --admin-error: #ef4444;
+  --admin-gray-50: #f9fafb;
+  --admin-gray-100: #f3f4f6;
+  --admin-gray-200: #e5e7eb;
+  --admin-gray-300: #d1d5db;
+  --admin-gray-400: #9ca3af;
+  --admin-gray-500: #6b7280;
+  --admin-gray-600: #4b5563;
+  --admin-gray-700: #374151;
+  --admin-gray-800: #1f2937;
+  --admin-gray-900: #111827;
+}
+
+/* Sidebar animations */
+.admin-sidebar-enter {
+  transform: translateX(-100%);
+}
+
+.admin-sidebar-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.admin-sidebar-exit {
+  transform: translateX(0);
+}
+
+.admin-sidebar-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+}
+
+/* Professional card styles */
+.admin-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease-in-out;
+  animation: floatWave 3s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Don't apply default card animation to crab body */
+.crab-body.admin-card {
+  animation: none;
+}
+
+@keyframes floatWave {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-12px) rotate(-0.5deg);
+  }
+}
+
+.admin-card:hover {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Professional buttons */
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.admin-btn-primary {
+  background-color: var(--admin-primary);
+  color: white;
+}
+
+.admin-btn-primary:hover {
+  background-color: var(--admin-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(79, 70, 229, 0.3);
+}
+
+.admin-btn-secondary {
+  background-color: white;
+  color: var(--admin-gray-700);
+  border: 1px solid var(--admin-gray-300);
+}
+
+.admin-btn-secondary:hover {
+  background-color: var(--admin-gray-50);
+  border-color: var(--admin-gray-400);
+}
+
+.admin-btn-danger {
+  background-color: var(--admin-error);
+  color: white;
+}
+
+.admin-btn-danger:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
+
+/* Professional form styles */
+.admin-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.admin-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--admin-gray-700);
+  margin-bottom: 0.5rem;
+}
+
+.admin-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--admin-gray-300);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+}
+
+.admin-input:focus {
+  outline: none;
+  border-color: var(--admin-primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.admin-input:disabled {
+  background-color: var(--admin-gray-50);
+  color: var(--admin-gray-500);
+  cursor: not-allowed;
+}
+
+/* Professional table styles */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.admin-table th {
+  background-color: var(--admin-gray-50);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--admin-gray-500);
+  border-bottom: 1px solid var(--admin-gray-200);
+}
+
+.admin-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--admin-gray-200);
+  font-size: 0.875rem;
+}
+
+.admin-table tbody tr:hover {
+  background-color: var(--admin-gray-50);
+}
+
+/* Status badges */
+.admin-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.admin-badge-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.admin-badge-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.admin-badge-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.admin-badge-info {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.admin-badge-gray {
+  background-color: var(--admin-gray-100);
+  color: var(--admin-gray-800);
+}
+
+/* Loading states */
+.admin-loading {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--admin-gray-300);
+  border-radius: 50%;
+  border-top-color: var(--admin-primary);
+  animation: admin-spin 1s ease-in-out infinite;
+}
+
+@keyframes admin-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Professional spacing */
+.admin-space-y-1 > * + * {
+  margin-top: 0.25rem;
+}
+
+.admin-space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.admin-space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.admin-space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .admin-hide-mobile {
+    display: none;
+  }
+
+  .admin-table {
+    font-size: 0.75rem;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 0.5rem;
+  }
+}
+
+/* Professional animations */
+.admin-fade-in {
+  animation: admin-fadeIn 0.3s ease-in-out;
+}
+
+@keyframes admin-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-slide-up {
+  animation: admin-slideUp 0.3s ease-out;
+}
+
+@keyframes admin-slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus styles for accessibility */
+.admin-focus:focus {
+  outline: 2px solid var(--admin-primary);
+  outline-offset: 2px;
+}
+
+/* Enhanced Ocean Water Background */
+.water-background {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 191, 255, 0.2) 0%,
+    rgba(0, 150, 255, 0.35) 15%,
+    rgba(0, 120, 220, 0.5) 30%,
+    rgba(0, 100, 200, 0.65) 45%,
+    rgba(0, 80, 180, 0.75) 60%,
+    rgba(0, 60, 140, 0.85) 75%,
+    rgba(0, 40, 100, 0.92) 90%,
+    rgba(0, 20, 60, 1) 100%
+  );
+  position: relative;
+  overflow: hidden;
+  animation: oceanDepth 25s ease-in-out infinite;
+}
+
+/* Enhanced ocean-like waves with multiple layers */
+.water-wave {
+  position: absolute;
+  width: 400%;
+  height: 200px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 25%,
+    rgba(135, 206, 235, 0.12) 50%,
+    rgba(255, 255, 255, 0.08) 75%,
+    transparent 100%
+  );
+  border-radius: 50% 50% 60% 40%;
+  filter: blur(2px);
+  transform-origin: center;
+}
+
+.wave1 {
+  top: 5%;
+  left: -150%;
+  animation: oceanWave 14s ease-in-out infinite;
+  opacity: 0.5;
+  height: 180px;
+  animation-delay: 0s;
+}
+
+.wave2 {
+  top: 25%;
+  left: -150%;
+  animation: oceanWave 20s ease-in-out infinite reverse;
+  opacity: 0.4;
+  height: 220px;
+  animation-delay: -7s;
+}
+
+.wave3 {
+  top: 45%;
+  left: -150%;
+  animation: oceanWave 16s ease-in-out infinite;
+  opacity: 0.3;
+  height: 160px;
+  animation-delay: -14s;
+}
+
+/* Additional wave layers for more depth */
+.water-wave.wave4 {
+  top: 65%;
+  left: -150%;
+  animation: oceanWave 22s ease-in-out infinite reverse;
+  opacity: 0.25;
+  height: 240px;
+  animation-delay: -3s;
+}
+
+.water-wave.wave5 {
+  top: 85%;
+  left: -150%;
+  animation: oceanWave 18s ease-in-out infinite;
+  opacity: 0.2;
+  height: 200px;
+  animation-delay: -10s;
+}
+
+/* Enhanced ocean caustics with surface light */
+.water-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(
+      ellipse at 15% 25%,
+      rgba(120, 200, 255, 0.4) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 75% 15%,
+      rgba(135, 220, 255, 0.35) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 35% 60%,
+      rgba(100, 180, 255, 0.25) 0%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse at 85% 70%,
+      rgba(140, 210, 255, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 60% 35%,
+      rgba(110, 190, 255, 0.2) 0%,
+      transparent 70%
+    );
+  animation: oceanCaustics 12s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.water-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 2px
+    ),
+    repeating-linear-gradient(
+      30deg,
+      transparent,
+      transparent 3px,
+      rgba(255, 255, 255, 0.02) 3px,
+      rgba(255, 255, 255, 0.02) 6px
+    );
+  background-size:
+    100px 100px,
+    150px 150px,
+    120px 120px,
+    200px 200px;
+  animation: surfaceRipples 15s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes oceanWave {
+  0% {
+    transform: translateX(0) translateY(0) scale(1) rotate(0deg) skewX(0deg);
+    opacity: 0.3;
+  }
+  10% {
+    transform: translateX(80px) translateY(-15px) scale(1.05) rotate(1deg)
+      skewX(2deg);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translateX(200px) translateY(-25px) scale(1.15) rotate(3deg)
+      skewX(-1deg);
+    opacity: 0.7;
+  }
+  40% {
+    transform: translateX(320px) translateY(10px) scale(0.9) rotate(-2deg)
+      skewX(3deg);
+    opacity: 0.4;
+  }
+  55% {
+    transform: translateX(450px) translateY(-18px) scale(1.08) rotate(2deg)
+      skewX(-2deg);
+    opacity: 0.6;
+  }
+  70% {
+    transform: translateX(580px) translateY(8px) scale(0.95) rotate(-1deg)
+      skewX(1deg);
+    opacity: 0.35;
+  }
+  85% {
+    transform: translateX(700px) translateY(-12px) scale(1.12) rotate(1deg)
+      skewX(-3deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(800px) translateY(0) scale(1) rotate(0deg) skewX(0deg);
+    opacity: 0.3;
+  }
+}
+
+@keyframes oceanCaustics {
+  0% {
+    transform: scale(1) rotate(0deg) translateX(0px);
+    opacity: 0.4;
+  }
+  20% {
+    transform: scale(1.15) rotate(72deg) translateX(20px);
+    opacity: 0.6;
+  }
+  40% {
+    transform: scale(0.85) rotate(144deg) translateX(-15px);
+    opacity: 0.3;
+  }
+  60% {
+    transform: scale(1.08) rotate(216deg) translateX(25px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: scale(0.92) rotate(288deg) translateX(-10px);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(1) rotate(360deg) translateX(0px);
+    opacity: 0.4;
+  }
+}
+
+@keyframes waterPattern {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(50px) translateY(50px);
+  }
+}
+
+@keyframes oceanDepth {
+  0%,
+  100% {
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  25% {
+    filter: brightness(1.1) hue-rotate(5deg);
+  }
+  50% {
+    filter: brightness(0.95) hue-rotate(-3deg);
+  }
+  75% {
+    filter: brightness(1.05) hue-rotate(2deg);
+  }
+}
+
+/* Surface ripples effect */
+@keyframes surfaceRipples {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.1;
+  }
+  25% {
+    transform: scale(1.2) rotate(90deg);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(0.8) rotate(180deg);
+    opacity: 0.08;
+  }
+  75% {
+    transform: scale(1.1) rotate(270deg);
+    opacity: 0.12;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 0.1;
+  }
+}
+
+/* Realistic Fish Animation */
+.fish {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.9;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.fish:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.fish1 {
+  top: 15%;
+  left: -15%;
+  animation: tropicalFishSwim 20s linear infinite;
+  animation-delay: 0s;
+  font-size: 2rem;
+}
+
+.fish2 {
+  top: 35%;
+  left: -15%;
+  animation: schoolFishSwim 25s linear infinite;
+  animation-delay: -5s;
+  transform: scaleX(-1);
+  font-size: 1.8rem;
+}
+
+.fish3 {
+  top: 55%;
+  left: -15%;
+  animation: sharkSwim 30s linear infinite;
+  animation-delay: -10s;
+  font-size: 3rem;
+}
+
+.fish4 {
+  top: 75%;
+  left: -15%;
+  animation: pufferfishSwim 22s linear infinite;
+  animation-delay: -15s;
+  transform: scaleX(-1);
+  font-size: 2.2rem;
+}
+
+.fish5 {
+  top: 25%;
+  left: -15%;
+  animation: octopusDance 18s linear infinite;
+  animation-delay: -20s;
+  font-size: 2.8rem;
+}
+
+/* Additional fish for more life */
+.fish6 {
+  top: 45%;
+  left: -15%;
+  animation: jellyfishFloat 16s linear infinite;
+  animation-delay: -8s;
+  font-size: 2.5rem;
+}
+
+.fish7 {
+  top: 65%;
+  left: -15%;
+  animation: seahorseGlide 24s linear infinite;
+  animation-delay: -12s;
+  font-size: 1.5rem;
+}
+
+@keyframes tropicalFishSwim {
+  0% {
+    left: -15%;
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.9;
+  }
+  15% {
+    transform: translateY(-30px) rotate(-5deg);
+  }
+  30% {
+    transform: translateY(20px) rotate(3deg);
+  }
+  45% {
+    transform: translateY(-25px) rotate(-2deg);
+  }
+  60% {
+    transform: translateY(15px) rotate(4deg);
+  }
+  75% {
+    transform: translateY(-20px) rotate(-3deg);
+  }
+  90% {
+    transform: translateY(10px) rotate(2deg);
+  }
+  95% {
+    opacity: 0.9;
+  }
+  100% {
+    left: 115%;
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes schoolFishSwim {
+  0% {
+    left: 115%;
+    transform: scaleX(-1) translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.9;
+  }
+  20% {
+    transform: scaleX(-1) translateY(25px) rotate(5deg);
+  }
+  35% {
+    transform: scaleX(-1) translateY(-15px) rotate(-3deg);
+  }
+  50% {
+    transform: scaleX(-1) translateY(30px) rotate(4deg);
+  }
+  65% {
+    transform: scaleX(-1) translateY(-20px) rotate(-2deg);
+  }
+  80% {
+    transform: scaleX(-1) translateY(18px) rotate(3deg);
+  }
+  95% {
+    opacity: 0.9;
+  }
+  100% {
+    left: -15%;
+    transform: scaleX(-1) translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sharkSwim {
+  0% {
+    left: -15%;
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-15px) rotate(-2deg) scale(1.05);
+  }
+  50% {
+    transform: translateY(10px) rotate(1deg) scale(0.95);
+  }
+  75% {
+    transform: translateY(-12px) rotate(-1deg) scale(1.02);
+  }
+  95% {
+    opacity: 0.8;
+  }
+  100% {
+    left: 115%;
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes pufferfishSwim {
+  0% {
+    left: 115%;
+    transform: scaleX(-1) translateY(0px) scale(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.9;
+  }
+  20% {
+    transform: scaleX(-1) translateY(20px) scale(1.1);
+  }
+  40% {
+    transform: scaleX(-1) translateY(-18px) scale(0.9);
+  }
+  60% {
+    transform: scaleX(-1) translateY(22px) scale(1.15);
+  }
+  80% {
+    transform: scaleX(-1) translateY(-15px) scale(0.95);
+  }
+  95% {
+    opacity: 0.9;
+  }
+  100% {
+    left: -15%;
+    transform: scaleX(-1) translateY(0px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes octopusDance {
+  0% {
+    left: -15%;
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.9;
+  }
+  15% {
+    transform: translateY(-25px) rotate(10deg) scale(1.1);
+  }
+  30% {
+    transform: translateY(20px) rotate(-8deg) scale(0.9);
+  }
+  45% {
+    transform: translateY(-30px) rotate(12deg) scale(1.05);
+  }
+  60% {
+    transform: translateY(25px) rotate(-10deg) scale(0.95);
+  }
+  75% {
+    transform: translateY(-20px) rotate(8deg) scale(1.08);
+  }
+  90% {
+    transform: translateY(15px) rotate(-6deg) scale(1);
+  }
+  95% {
+    opacity: 0.9;
+  }
+  100% {
+    left: 115%;
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes jellyfishFloat {
+  0% {
+    left: 50%;
+    top: -10%;
+    transform: scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  25% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  50% {
+    transform: scale(0.9) rotate(-3deg);
+  }
+  75% {
+    transform: scale(1.05) rotate(4deg);
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    left: 50%;
+    top: 110%;
+    transform: scale(1) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes seahorseGlide {
+  0% {
+    left: -15%;
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-40px) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(30px) rotate(8deg);
+  }
+  75% {
+    transform: translateY(-35px) rotate(-6deg);
+  }
+  95% {
+    opacity: 0.8;
+  }
+  100% {
+    left: 115%;
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+/* Realistic Bubbles Animation */
+.bubble {
+  position: absolute;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 50%;
+  animation: realisticBubbleFloat 8s ease-out infinite;
+  box-shadow:
+    inset -2px -2px 4px rgba(255, 255, 255, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bubble1 {
+  width: 12px;
+  height: 12px;
+  left: 15%;
+  bottom: -15px;
+  animation-delay: 0s;
+  animation-duration: 9s;
+}
+
+.bubble2 {
+  width: 18px;
+  height: 18px;
+  left: 35%;
+  bottom: -20px;
+  animation-delay: -2s;
+  animation-duration: 11s;
+}
+
+.bubble3 {
+  width: 8px;
+  height: 8px;
+  left: 55%;
+  bottom: -10px;
+  animation-delay: -4s;
+  animation-duration: 7s;
+}
+
+.bubble4 {
+  width: 14px;
+  height: 14px;
+  left: 75%;
+  bottom: -16px;
+  animation-delay: -1s;
+  animation-duration: 10s;
+}
+
+.bubble5 {
+  width: 6px;
+  height: 6px;
+  left: 25%;
+  bottom: -8px;
+  animation-delay: -3s;
+  animation-duration: 6s;
+}
+
+.bubble6 {
+  width: 10px;
+  height: 10px;
+  left: 65%;
+  bottom: -12px;
+  animation-delay: -5s;
+  animation-duration: 8s;
+}
+
+.bubble7 {
+  width: 16px;
+  height: 16px;
+  left: 85%;
+  bottom: -18px;
+  animation-delay: -6s;
+  animation-duration: 12s;
+}
+
+.bubble8 {
+  width: 7px;
+  height: 7px;
+  left: 45%;
+  bottom: -9px;
+  animation-delay: -7s;
+  animation-duration: 7.5s;
+}
+
+@keyframes realisticBubbleFloat {
+  0% {
+    bottom: -20px;
+    opacity: 0;
+    transform: translateX(0) scale(0.5);
+  }
+  5% {
+    opacity: 0.8;
+    transform: translateX(0) scale(1);
+  }
+  25% {
+    transform: translateX(10px) scale(1.1);
+  }
+  50% {
+    transform: translateX(-5px) scale(0.9);
+  }
+  75% {
+    transform: translateX(15px) scale(1.05);
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    bottom: 110vh;
+    opacity: 0;
+    transform: translateX(25px) scale(0.3);
+  }
+}
+
+/* Seaweed Animation */
+.seaweed {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.6;
+  animation: seaweedSway 4s ease-in-out infinite;
+  transform-origin: bottom center;
+  filter: hue-rotate(120deg);
+}
+
+.seaweed1 {
+  bottom: 0;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.seaweed2 {
+  bottom: 0;
+  left: 90%;
+  animation-delay: -2s;
+}
+
+@keyframes seaweedSway {
+  0%,
+  100% {
+    transform: rotate(-3deg) scaleY(1);
+  }
+  50% {
+    transform: rotate(3deg) scaleY(1.05);
+  }
+}
+
+/* Coral Animation */
+.coral {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.7;
+  animation: coralGlow 6s ease-in-out infinite;
+  bottom: 5%;
+}
+
+.coral1 {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.coral2 {
+  left: 80%;
+  animation-delay: -3s;
+}
+
+@keyframes coralGlow {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+    filter: brightness(1.2);
+  }
+}
+
+/* Crab-shaped Login Container */
+.crab-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: crabFloat 4s ease-in-out infinite;
+}
+
+/* Crab Body (Main Form) */
+.crab-body {
+  position: relative;
+  background: linear-gradient(135deg, #ff6b35, #ff8e53, #ffad70);
+  border-radius: 60% 60% 80% 80%;
+  width: 100%;
+  min-height: 400px;
+  box-shadow:
+    0 10px 30px rgba(255, 107, 53, 0.3),
+    inset 0 2px 10px rgba(255, 255, 255, 0.2),
+    inset 0 -2px 10px rgba(0, 0, 0, 0.1);
+  border: 3px solid #d63031;
+  z-index: 10;
+  transform-origin: center;
+}
+
+/* Crab Eyes */
+.crab-eyes {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 20;
+}
+
+.crab-eye {
+  font-size: 2rem;
+  animation: crabEyeMove 3s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.left-eye {
+  animation-delay: 0s;
+}
+
+.right-eye {
+  animation-delay: 0.5s;
+}
+
+/* Crab Claws */
+.crab-claws {
+  position: absolute;
+  top: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 15;
+}
+
+.left-claws {
+  left: -80px;
+  transform: rotate(-20deg);
+}
+
+.right-claws {
+  right: -80px;
+  transform: rotate(20deg);
+}
+
+.crab-claw {
+  font-size: 2.5rem;
+  animation: clawSnap 2s ease-in-out infinite;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.crab-claw:hover {
+  transform: scale(1.2) rotate(10deg);
+  animation-duration: 0.5s;
+}
+
+.claw-1 {
+  animation-delay: 0s;
+}
+.claw-2 {
+  animation-delay: 0.3s;
+}
+.claw-3 {
+  animation-delay: 0.6s;
+}
+.claw-4 {
+  animation-delay: 0.9s;
+}
+.claw-5 {
+  animation-delay: 1.2s;
+}
+.claw-6 {
+  animation-delay: 1.5s;
+}
+
+/* Crab Legs */
+.crab-legs {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5;
+}
+
+.crab-leg {
+  font-size: 1.5rem;
+  animation: legWalk 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transform-origin: top center;
+}
+
+.leg-1 {
+  animation-delay: 0s;
+}
+.leg-2 {
+  animation-delay: 0.1s;
+}
+.leg-3 {
+  animation-delay: 0.2s;
+}
+.leg-4 {
+  animation-delay: 0.3s;
+}
+.leg-5 {
+  animation-delay: 0.4s;
+}
+.leg-6 {
+  animation-delay: 0.5s;
+}
+.leg-7 {
+  animation-delay: 0.6s;
+}
+.leg-8 {
+  animation-delay: 0.7s;
+}
+
+/* Crab Shell Pattern */
+.crab-shell-pattern {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15;
+  pointer-events: none;
+}
+
+.shell-line {
+  width: 200px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(139, 69, 19, 0.6),
+    transparent
+  );
+  border-radius: 2px;
+  margin: 15px 0;
+  animation: shellShimmer 3s ease-in-out infinite;
+}
+
+.line-1 {
+  width: 180px;
+  animation-delay: 0s;
+}
+.line-2 {
+  width: 220px;
+  animation-delay: 0.5s;
+}
+.line-3 {
+  width: 160px;
+  animation-delay: 1s;
+}
+
+/* Crab Animations */
+@keyframes crabFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-12px) rotate(-1deg);
+  }
+}
+
+@keyframes crabEyeMove {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-3px) scale(1.1);
+  }
+  50% {
+    transform: translateY(2px) scale(0.9);
+  }
+  75% {
+    transform: translateY(-5px) scale(1.05);
+  }
+}
+
+@keyframes clawSnap {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  20% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  40% {
+    transform: scale(0.9) rotate(-3deg);
+  }
+  60% {
+    transform: scale(1.05) rotate(2deg);
+  }
+  80% {
+    transform: scale(0.95) rotate(-1deg);
+  }
+}
+
+@keyframes legWalk {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0px);
+  }
+  25% {
+    transform: rotate(-10deg) translateY(-2px);
+  }
+  50% {
+    transform: rotate(5deg) translateY(1px);
+  }
+  75% {
+    transform: rotate(-5deg) translateY(-1px);
+  }
+}
+
+@keyframes shellShimmer {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scaleX(1.05);
+  }
+}
+
+/* Override admin-card styles for crab body */
+.crab-body.admin-card {
+  background: linear-gradient(135deg, #ff6b35, #ff8e53, #ffad70);
+  color: white;
+  border-radius: 60% 60% 80% 80%;
+  animation: none;
+}
+
+.crab-body .admin-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.crab-body .admin-input {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #333;
+  font-weight: 500;
+}
+
+.crab-body .admin-input:focus {
+  background: rgba(255, 255, 255, 1);
+  border-color: #ff6b35;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.3);
+}
+
+.crab-body .admin-btn-primary {
+  background: linear-gradient(135deg, #d63031, #e17055);
+  border: none;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(214, 48, 49, 0.4);
+}
+
+.crab-body .admin-btn-primary:hover {
+  background: linear-gradient(135deg, #b71c1c, #d63031);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(214, 48, 49, 0.5);
+}
+
+/* Responsive adjustments for crab */
+@media (max-width: 768px) {
+  .crab-container {
+    max-width: 90%;
+    transform: scale(0.9);
+  }
+
+  .left-claws {
+    left: -60px;
+  }
+
+  .right-claws {
+    right: -60px;
+  }
+
+  .crab-claw {
+    font-size: 2rem;
+  }
+
+  .crab-leg {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .crab-container {
+    transform: scale(0.8);
+  }
+
+  .left-claws {
+    left: -50px;
+  }
+
+  .right-claws {
+    right: -50px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .admin-no-print {
+    display: none !important;
+  }
+
+  .admin-layout {
+    background: white !important;
+  }
+
+  .admin-card {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+
+  .water-background {
+    display: none !important;
+  }
+
+  .crab-container {
+    animation: none !important;
+  }
+
+  .crab-claws,
+  .crab-legs,
+  .crab-eyes {
+    display: none !important;
+  }
+}
